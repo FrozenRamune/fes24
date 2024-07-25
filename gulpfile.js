@@ -16,8 +16,8 @@ function task_copy_files() {
                 base: "src"
             }
         )
-        .pipe(changed("dist"))
-        .pipe(gulp.dest("dist/"))
+        .pipe(changed("docs"))
+        .pipe(gulp.dest("docs/"))
         .pipe(browser_sync.reload({stream: true}));
 }
 
@@ -28,9 +28,9 @@ function task_pug() {
                 base: "src",
             }
         )
-        .pipe(changed("dist"))
+        .pipe(changed("docs"))
         .pipe(pug())
-        .pipe(gulp.dest("dist/"))
+        .pipe(gulp.dest("docs/"))
         .pipe(browser_sync.reload({stream: true}));
 }
 
@@ -41,9 +41,9 @@ function task_sass() {
                 base: "src",
             }
         )
-        .pipe(changed("dist"))
+        .pipe(changed("docs"))
         .pipe(sass())
-        .pipe(gulp.dest("dist/"))
+        .pipe(gulp.dest("docs/"))
         .pipe(browser_sync.reload({stream: true}));
 }
 
@@ -56,7 +56,7 @@ const task_compile = gulp.parallel(
 function task_server(done) {
     browser_sync({
         server: {
-            baseDir: "./dist"
+            baseDir: "./docs"
         }
     });
     done();
@@ -66,12 +66,9 @@ function task_watch() {
     gulp.watch("./src/**/*", task_compile);
 }
 
-export default gulp.series(
-    task_compile,
-    task_server,
-);
+export default task_compile;
 
-export watch gulp.series(
+export const watch =  gulp.series(
     task_compile,
     task_server,
     task_watch,
