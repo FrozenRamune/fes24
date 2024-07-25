@@ -13,7 +13,8 @@ function task_copy_files() {
                 "!src/**/*.scss",
                 "!src/**/*.pug",
             ], {
-                base: "src"
+                base: "src",
+                encoding: false,
             }
         )
         .pipe(changed("docs"))
