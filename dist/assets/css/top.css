@@ -1,0 +1,49 @@
+.top-img {
+  max-height: 600px;
+  display: block;
+  margin: auto;
+}
+
+.colored-container {
+  background-color: #FFE0E0;
+}
+
+#theme-container {
+  padding-top: 50px;
+}
+
+#theme-head .before, #theme-head .after {
+  display: flex;
+  height: 2px;
+  width: 60px;
+  background-color: black;
+  align-items: center;
+}
+#theme-head .before {
+  margin-right: 20px;
+  justify-content: start;
+}
+#theme-head .after {
+  margin-left: 20px;
+  justify-content: end;
+}
+#theme-head .before::before, #theme-head .after::after {
+  content: "";
+  display: block;
+  height: 5px;
+  width: 5px;
+  background-color: black;
+  transform: rotateZ(45deg);
+}
+#theme-head .before::before {
+  left: 0;
+}
+#theme-head .after::after {
+  right: 0;
+}
+
+#theme-word {
+  margin: 20px 0;
+  font-size: 60px;
+  color: #FF5555;
+}

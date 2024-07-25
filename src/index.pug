@@ -1,0 +1,32 @@
+extends common/_layout
+
+include common/_head
+include common/_header
+
+block title
+  title 文化祭
+block append head
+  link(href="./assets/css/top.css" rel="stylesheet")
+  script(src="./assets/js/remain-days.js")
+
+block content
+  img.top-img(class=["img-fluid"] src="./assets/img/top_logo.png")
+  .colored-container(class=["container-fluid", "d-flex", "align-items-center", "justify-content-center"])
+    div 開幕まであと
+    #days-count-down(class=["fs-1", "fw-bold"], style={margin: "10px"})
+    div 日
+  #theme-container(class=["container-fluid", "text-center"])
+    #theme-head(class=["d-flex", "align-items-center", "justify-content-center"])
+      .before
+      span(class=["fw-bold"]) 2024文化祭テーマ
+      .after
+    h1#theme-word つなぐ
+    p 文化祭の実行委員同士のつながり，
+    p 先輩と後輩のつながり，
+    p 来場者と拍両性のつながりなど
+    p たくさんのつながりが生まれる場所です。
+    p 拍両性全員がそのつながりを大切にしてほしい。
+    p その思いを(解読不能)へとつないでいってほしい。
+    p 一つにつながった白陵(解読不能)を
+    p 外部へと広げていきたい。
+    p そんな(解読不能)を込めて「つなぐ」というテーマにしました。

@@ -1,0 +1,60 @@
+$primary_color: #FFE0E0;
+$red: #FF5555;
+
+.top-img {
+  max-height: 600px;
+  display: block;
+  margin: auto;
+}
+
+.colored-container {
+  background-color: $primary_color;
+}
+
+#theme-container {
+  padding-top: 50px;
+}
+
+#theme-head {
+
+  .before, .after {
+    display: flex;
+    height: 2px;
+    width: 60px;
+    background-color: black;
+    align-items: center;
+  }
+
+  .before {
+    margin-right: 20px;
+    justify-content: start;
+  }
+
+  .after {
+    margin-left: 20px;
+    justify-content: end;
+  }
+
+  .before::before, .after::after {
+    content: "";
+    display: block;
+    height: 5px;
+    width: 5px;
+    background-color: black;
+    transform: rotateZ(45deg);
+  }
+
+  .before::before {
+    left: 0;
+  }
+
+  .after::after {
+    right: 0;
+  }
+}
+
+#theme-word {
+  margin: 20px 0;
+  font-size: 60px;
+  color: $red;
+}
