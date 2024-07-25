@@ -69,5 +69,10 @@ function task_watch() {
 export default gulp.series(
     task_compile,
     task_server,
+);
+
+export watch gulp.series(
+    task_compile,
+    task_server,
     task_watch,
 );
