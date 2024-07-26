@@ -23,10 +23,61 @@ block content
     h1#theme-word つなぐ
     p 文化祭の実行委員同士のつながり，
     p 先輩と後輩のつながり，
-    p 来場者と拍両性のつながりなど
+    p 来場者と白陵生のつながりなど
     p たくさんのつながりが生まれる場所です。
-    p 拍両性全員がそのつながりを大切にしてほしい。
-    p その思いを(解読不能)へとつないでいってほしい。
+    p 白陵生全員がそのつながりを大切にしてほしい。
+    p その思いを未来へとつないでいってほしい。
     p 一つにつながった白陵(解読不能)を
     p 外部へと広げていきたい。
-    p そんな(解読不能)を込めて「つなぐ」というテーマにしました。
+    p そんな思いを込めて「つなぐ」というテーマにしました。
+  #links-container(class=["container-fluid", "row", "text-center", "fw-bold", "p-0", "m-0", "border-0"])
+    -
+      const links = [
+        {
+          id: 'access',
+          body: 'アクセス',
+          color: 'red',
+        },
+        {
+          id: 'map',
+          body: '校内マップ',
+          color: 'blue',
+        },
+        {
+          id: 'goods',
+          body: '物販情報',
+          color: 'cyan',
+        },
+        {
+          id: 'stage',
+          body: 'ステージ情報',
+          color: 'green',
+        },
+        {
+          id: 'food',
+          body: '飲食物情報',
+          color: 'yellow',
+        },
+        {
+          id: 'event',
+          body: 'イベント情報',
+          color: 'sky',
+        },
+        {
+          id: 'clubs',
+          head: 'club activities',
+          body: '各部活紹介',
+          color: 'purple',
+        }
+      ]
+    - for(const ind in links)
+      div(id=`link-${links[ind].id}` class=[`back-${links[ind].color}`, ...(parseInt(ind) + 1 === links.length ? ["col-12"] : ["col-6", "col-lg-4"])])
+        p.display-6 #{links[ind].head || links[ind].id.toUpperCase()}
+        img(src=`./assets/img/${links[ind].id}.png`)
+        p #{links[ind].body}
+    //-
+      div(id="link-clubs" class=["back-purple", "d-flex", "justify-content-center"])
+        img(src='./assets/img/clubs.png')
+        div
+          p.display-6 Club Activities
+          p 各部活紹介
