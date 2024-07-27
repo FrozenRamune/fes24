@@ -8,10 +8,66 @@ block title
 block append head
   link(href="./assets/css/top.css" rel="stylesheet")
   script(src="./assets/js/remain-days.js")
+block values
+
 
 block content
+  -
+    const informations = [
+              {
+                "date": "7.15",
+                "content": "（ここにお知らせを入れる）",
+              },
+              {
+                "date": "7.1",
+                "content": "（ここにお知らせを入れる）",
+              },
+              {
+                "date": "6.30",
+                "content": "（ここにお知らせを入れる）",
+              },
+            ]
+  -
+    const links = [
+      {
+        id: 'access',
+        body: 'アクセス',
+        color: 'red',
+      },
+      {
+        id: 'map',
+        body: '校内マップ',
+        color: 'blue',
+      },
+      {
+        id: 'goods',
+        body: '物販情報',
+        color: 'cyan',
+      },
+      {
+        id: 'stage',
+        body: 'ステージ情報',
+        color: 'green',
+      },
+      {
+        id: 'food',
+        body: '飲食物情報',
+        color: 'yellow',
+      },
+      {
+        id: 'event',
+        body: 'イベント情報',
+        color: 'sky',
+      },
+      {
+        id: 'clubs',
+        head: 'club activities',
+        body: '各部活紹介',
+        color: 'purple',
+      }
+    ]
   img.top-img(class=["img-fluid"] src="./assets/img/top_logo.png")
-  .colored-container(class=["container-fluid", "d-flex", "align-items-center", "justify-content-center"])
+  div(class=["colored-container", "container-fluid", "d-flex", "align-items-center", "justify-content-center", "m-0", "p-0"])
     div 開幕まであと
     #days-count-down(class=["fs-1", "fw-bold"], style={margin: "10px"})
     div 日
@@ -21,63 +77,39 @@ block content
       span(class=["fw-bold"]) 2024文化祭テーマ
       .after
     h1#theme-word つなぐ
-    p 文化祭の実行委員同士のつながり，
+    p 文化祭は実行委員同士のつながり，
     p 先輩と後輩のつながり，
     p 来場者と白陵生のつながりなど
     p たくさんのつながりが生まれる場所です。
     p 白陵生全員がそのつながりを大切にしてほしい。
     p その思いを未来へとつないでいってほしい。
-    p 一つにつながった白陵(解読不能)を
+    p 一つにつながった白陵の輪を
     p 外部へと広げていきたい。
     p そんな思いを込めて「つなぐ」というテーマにしました。
-  #links-container(class=["container-fluid", "row", "text-center", "fw-bold", "p-0", "m-0", "border-0"])
-    -
-      const links = [
-        {
-          id: 'access',
-          body: 'アクセス',
-          color: 'red',
-        },
-        {
-          id: 'map',
-          body: '校内マップ',
-          color: 'blue',
-        },
-        {
-          id: 'goods',
-          body: '物販情報',
-          color: 'cyan',
-        },
-        {
-          id: 'stage',
-          body: 'ステージ情報',
-          color: 'green',
-        },
-        {
-          id: 'food',
-          body: '飲食物情報',
-          color: 'yellow',
-        },
-        {
-          id: 'event',
-          body: 'イベント情報',
-          color: 'sky',
-        },
-        {
-          id: 'clubs',
-          head: 'club activities',
-          body: '各部活紹介',
-          color: 'purple',
-        }
-      ]
+  #links-container(class=["container-fluid", "row", "text-center", "fw-bold", "border-0"])
     - for(const ind in links)
-      div(id=`link-${links[ind].id}` class=[`back-${links[ind].color}`, ...(parseInt(ind) + 1 === links.length ? ["col-12"] : ["col-6", "col-lg-4"])])
-        p.display-6 #{links[ind].head || links[ind].id.toUpperCase()}
+      .button-container(id=`link-${links[ind].id}` class=[
+        `back-${links[ind].color}`,
+        ...(parseInt(ind) + 1 === links.length ? ["col-12"] : ["col-6", "col-lg-4"])
+      ])
+        p.display-6
+          a(href=`./${links[ind].id}/` class=["stretched-link"])
+            |#{links[ind].head || links[ind].id.toUpperCase()}
         img(src=`./assets/img/${links[ind].id}.png`)
         p #{links[ind].body}
-    //-
-      div(id="link-clubs" class=["back-purple", "d-flex", "justify-content-center"])
-        img(src='./assets/img/clubs.png')
-        div
-          p.display-6 Club Activities
-          p 各部活紹介
+  #information
+    h1(class=["text-center", "display-4", "fw-bold"]) INFORMATION
+    h2(class=["text-center"]) お知らせ
+    each info in informations
+      p.information-content
+        span.information-date 7.15
+        |ここにお知らせを入れる
+  #access(class="colored-container")
+    h1(class=["text-center", "display-4", "fw-bold"]) ACCESS
+    h2(class=["text-center"]) アクセス
+    p 〒676-0827
+    p 兵庫県高砂市阿弥陀町阿弥陀２２６０
+    p 白陵中学校・高等学校
+    p （JR曽根駅から徒歩で20～25分）
+    .button-container(class=["back-red"])
+      a(href="#" class=["stretched-link"]) Googleマップで見る
