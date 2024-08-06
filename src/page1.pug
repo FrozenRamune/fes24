@@ -1,0 +1,229 @@
+extends common/_layout
+
+include common/_head
+include common/_header
+
+block title
+  title 文化祭
+block append head
+  link(href="./assets/css/page1.css" rel="stylesheet")
+
+
+block content
+  -
+    const items = {
+      drink: [
+        {
+          name: '高砂ラムネ',
+          price: 120
+        },
+        {
+          name: 'お～いお茶',
+          price: 120,
+        },
+        {
+          name: 'カルピス',
+          price: 120,
+        },
+        {
+          name: 'オレンジ',
+          price: 120,
+        },
+        {
+          name: 'コーラ',
+          price: 120,
+        },
+      ],
+      cafeteria: [
+        {
+          name: 'そば',
+          price: 200,
+        },
+        {
+          name: 'うどん',
+          price: 200,
+        },
+        {
+          name: '冷やし担々麺',
+          price: 300,
+        },
+        {
+          name: 'そばカレー',
+          price: 200,
+        },
+      ],
+      take_out: [
+        {
+          name: 'カツ丼',
+          price: 300,
+        },
+        {
+          name: 'オムライス',
+          price: 300,
+        },
+        {
+          name: '穴子弁当',
+          price: 700,
+        },
+        {
+          name: '白陵弁当',
+          price: 1000,
+        },
+      ],
+      goods: [
+        {
+          name: "ドクタークリップ",
+          unit: "本",
+          price: 600,
+          options: [
+            {
+              id: "カラー",
+              value: "ブラック×ブルー、ラベンダー、ミントグリーン",
+            },
+          ]
+        },
+        {
+          name: "ドクタークリップ",
+          unit: "本",
+          price: 600,
+          options: [
+            {
+              id: "カラー",
+              value: "ブラック×ブルー、ラベンダー、ミントグリーン",
+            },
+          ]
+        },
+        {
+          name: "ドクタークリップ",
+          unit: "本",
+          price: 600,
+          options: [
+            {
+              id: "カラー",
+              value: "ブラック×ブルー、ラベンダー、ミントグリーン",
+            },
+          ]
+        },
+        {
+          name: "ドクタークリップ",
+          unit: "本",
+          price: 600,
+          options: [
+            {
+              id: "カラー",
+              value: "ブラック×ブルー、ラベンダー、ミントグリーン",
+            },
+          ]
+        },
+        {
+          name: "ドクタークリップ",
+          unit: "本",
+          price: 600,
+          options: [
+            {
+              id: "カラー",
+              value: "ブラック×ブルー、ラベンダー、ミントグリーン",
+            },
+          ]
+        },
+        {
+          name: "ドクタークリップ",
+          unit: "本",
+          price: 600,
+          options: [
+            {
+              id: "カラー",
+              value: "ブラック×ブルー、ラベンダー、ミントグリーン",
+            },
+          ]
+        },
+        {
+          name: "ドクタークリップ",
+          unit: "本",
+          price: 600,
+          options: [
+            {
+              id: "カラー",
+              value: "ブラック×ブルー、ラベンダー、ミントグリーン",
+            },
+          ]
+        },
+      ]
+    }
+  img.top-img(class=["img-fluid"] src="./assets/img/top_back.png")
+  #map(class="container-blue")
+    h1(class=["text-center", "display-4", "fw-bold"]) MAP
+    h2(class=["text-center"]) 校内マップ
+    img.img(src="./assets/img/map.png")
+    .button-container(class=["back-blue"])
+      a(href="#" class=["stretched-link"]) PDFで見る
+  #food(class="container-yellow")
+    h1(class=["text-center", "display-4", "fw-bold"]) FOOD
+    h2(class=["text-center"]) 飲食物情報
+    .bullet-container
+      h5 当日券について
+      ul
+        li
+          | 当日券は9:30（OP終了後）から販売開始、
+          br
+          | 予定数に達し次第、終了。
+        li
+          | テイクアウト購入時のみに使用できます。
+        li
+          | 当日券は文化祭当日13:00まで仕様可。
+          br
+          | 米印13:00以降はキャンセルとみなし、返金はなし。
+        li
+          | 13:00～13:30からキャンセル分の再販開始。
+      h5 ドリンク販売
+      p.sub-bullet 場所
+      p.sub-bullet-content 偽芸当前※レイアウト参照
+      p.sub-bullet-content ただし大雨の場合　偽芸当1階に変更
+      p.sub-bullet メニュー
+      ul.sub-bullet-content
+        each item in items.drink
+          li.price-container
+            span #{item.name}
+            span 1本#{item.price}円
+      h5 樹家
+      p 食堂とテイクアウトの2つに分かれる。
+      h6 1.食堂
+      p.sub-bullet 場所
+      p.sub-bullet-content 樹家食堂※レイアウト参照
+      p.sub-bullet メニュー
+      ul.sub-bullet-content
+        each item in items.cafeteria
+          li.price-container
+            span #{item.name}
+            span 1食#{item.price}円
+      h6 2.テイクアウト
+      p.sub-bullet 場所
+      p.sub-bullet-content 後者西側※レイアウト参照
+      p.sub-bullet メニュー
+      ul.sub-bullet-content
+        each item in items.take_out
+          li.price-container
+            span #{item.name}
+            span 1食{item.price}円
+      h5 キッチン化―
+      p.sub-bullet 場所
+      p.sub-bullet-content
+        | 前庭、三角公園（変更の可能性あり）
+        br
+        | ※レイアウト参照
+      p.sub-bullet メニュー
+      p.sub-bullet-content ※決まり次第順次発表
+  #goods(class="container-mint")
+    h1(class=["text-center", "display-4", "fw-bold"]) GOODS
+    h2(class=["text-center"]) 物販情報
+    img.img(src="./assets/img/goods.png")
+    ul
+      each item in items.goods
+        li
+          .price-container
+            span #{item.name}
+            span 1#{item.unit}#{item.price}円
+          each option in item.options
+            .option-container
+              div(class=["fw-bold"]) #{option.id}:
+              div #{option.value}

@@ -36,9 +36,10 @@ function task_pug() {
 }
 
 function task_sass() {
-    return gulp.src(
-            "src/**/*.scss",
-            {
+    return gulp.src([
+                "src/**/*.scss",
+                "!src/**/common.scss",
+            ], {
                 base: "src",
             }
         )

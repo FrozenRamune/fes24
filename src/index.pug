@@ -8,8 +8,6 @@ block title
 block append head
   link(href="./assets/css/top.css" rel="stylesheet")
   script(src="./assets/js/remain-days.js")
-block values
-
 
 block content
   -
@@ -31,43 +29,50 @@ block content
     const links = [
       {
         id: 'access',
+        page: '',
         body: 'アクセス',
         color: 'red',
       },
       {
         id: 'map',
+        page: 'page1.html',
         body: '校内マップ',
         color: 'blue',
       },
       {
         id: 'goods',
+        page: 'page1.html',
         body: '物販情報',
-        color: 'cyan',
+        color: 'mint',
       },
       {
         id: 'stage',
+        page: 'page2.html',
         body: 'ステージ情報',
         color: 'green',
       },
       {
         id: 'food',
+        page: 'page1.html',
         body: '飲食物情報',
         color: 'yellow',
       },
       {
         id: 'event',
+        page: 'page2.html',
         body: 'イベント情報',
         color: 'sky',
       },
       {
         id: 'clubs',
+        page: 'page3.html',
         head: 'club activities',
         body: '各部活紹介',
         color: 'purple',
       }
     ]
   img.top-img(class=["img-fluid"] src="./assets/img/top_logo.png")
-  div(class=["colored-container", "container-fluid", "d-flex", "align-items-center", "justify-content-center", "m-0", "p-0"])
+  div(class=["container-red", "container-fluid", "d-flex", "align-items-center", "justify-content-center", "m-0", "p-0"])
     div 開幕まであと
     #days-count-down(class=["fs-1", "fw-bold"], style={margin: "10px"})
     div 日
@@ -93,9 +98,9 @@ block content
         ...(parseInt(ind) + 1 === links.length ? ["col-12"] : ["col-6", "col-lg-4"])
       ])
         p.display-6
-          a(href=`./${links[ind].id}/` class=["stretched-link"])
+          a(href=`${links[ind].page}#${links[ind].id}` class=["stretched-link"])
             |#{links[ind].head || links[ind].id.toUpperCase()}
-        img(src=`./assets/img/${links[ind].id}.png`)
+        img(src=`./assets/img/icon_${links[ind].id}.png`)
         p #{links[ind].body}
   #information
     h1(class=["text-center", "display-4", "fw-bold"]) INFORMATION
@@ -104,7 +109,7 @@ block content
       p.information-content
         span.information-date 7.15
         |ここにお知らせを入れる
-  #access(class="colored-container")
+  #access(class="container-red")
     h1(class=["text-center", "display-4", "fw-bold"]) ACCESS
     h2(class=["text-center"]) アクセス
     p 〒676-0827

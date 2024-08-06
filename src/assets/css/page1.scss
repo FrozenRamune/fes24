@@ -1,0 +1,54 @@
+@use "common";
+
+.top-img {
+  width: 100%;
+}
+
+.img {
+  width: calc(100% - 20px * 2);
+  margin: 0 20px;
+}
+
+.price-container {
+  display: flex;
+  justify-content: space-between;
+  width: 220px;
+}
+
+#food {
+  .price-container {
+    position: relative;
+    $dot_size: 15px;
+    padding-left: $dot_size;
+
+    &::before {
+      content: '・';
+      display: block;
+      position: absolute;
+      width: $dot_size;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      font-size: 25px;
+    }
+  }
+}
+
+#goods {
+
+  ul {
+    list-style-type: decimal;
+  }
+
+  li {
+    margin: 25px 30px;
+  }
+
+  .option-container {
+    margin-top: 5px;
+
+    div:first-of-type {
+      font-size: 17px;
+    }
+  }
+}

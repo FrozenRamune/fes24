@@ -1,30 +1,9 @@
-$primary_color: #FFE0E0;
-
-$colors: (
-  red: #FF5555,
-  blue: #3D4EF4,
-  cyan: #1AD39C,
-  green: #3AAC13,
-  yellow: #FFC315,
-  sky: #7ACCFF,
-  purple: #B159F7,
-);
-
-.footer {
-  margin: 0 !important;
-  padding: 10px !important;
-  text-align: center;
-  font-size: small;
-}
+@use "common";
 
 .top-img {
   max-height: 600px;
   display: block;
   margin: auto;
-}
-
-.colored-container {
-  background-color: $primary_color;
 }
 
 #theme-container {
@@ -69,15 +48,6 @@ $colors: (
   }
 }
 
-body > div {
-  margin: 0 !important;
-  padding: 50px 0 30px !important;
-
-  & > p {
-    margin: 0 20px 10px;
-  }
-}
-
 #theme-container {
 
   p {
@@ -85,44 +55,9 @@ body > div {
   }
 
   #theme-word {
-    color: map-get($colors, red);
+    color: map-get(common.$colors, red);
     margin: 20px 0;
     font-size: 60px;
-  }
-}
-
-
-.button-container {
-  position: relative;
-  padding: 15px;
-  color: white;
-  text-align: center;
-  font-weight: bold;
-  font-size: large;
-
-  &:hover {
-    opacity: 0.8;
-  }
-
-  &::after {
-    content: "";
-    display: block;
-    position: absolute;
-    height: 20px;
-    width: 20px;
-    right: 10px;
-    bottom: 10px;
-    background-color: white;
-    clip-path: polygon(0 100%, 100% 0, 100% 100%);
-  }
-
-  p {
-    margin: 0;
-  }
-
-  a {
-    color: white;
-    text-decoration: none;
   }
 }
 
@@ -139,6 +74,7 @@ body > div {
   }
 
   .button-container {
+    margin: 0 !important;
     padding: 10px 0;
 
     &:last-child {
@@ -173,26 +109,16 @@ body > div {
 #information {
 
   .information-content {
-    margin-top: 25px !important;
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
     margin-left: 45px !important;
 
     .information-date {
       margin-right: 20px;
+      justify-content: space-between;
     }
 
   }
 
 }
 
-#access {
-  .button-container {
-    margin: 30px 50px;
-  }
-}
-
-
-@each $name, $color in $colors {
-  .#{"back-" + $name} {
-    background-color: $color;
-  }
-}

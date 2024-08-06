@@ -1,0 +1,157 @@
+$colors: (
+        red: #FF5555,
+        blue: #3D4EF4,
+        mint: #1AD39C,
+        green: #3AAC13,
+        yellow: #FFC315,
+        sky: #7ACCFF,
+        purple: #B159F7,
+);
+
+$secondary_colors: (
+        red: #FFE0E0,
+        blue: #B9C0FB,
+        mint: #D1F6EB,
+        green: #D8EED0,
+        yellow: #FFF3D0,
+        sky: #DFF1FC,
+        purple: #EFDEFD,
+);
+
+@each $name, $color in $colors {
+  .#{"back-" + $name} {
+    background-color: $color;
+  }
+}
+
+@each $name, $color in $secondary_colors {
+  .#{"container-" + $name} {
+    background-color: $color;
+  }
+}
+
+.footer {
+  margin: 0 !important;
+  padding: 10px !important;
+  text-align: center;
+  font-size: small;
+}
+
+body > div {
+  margin: 0 0 20px !important;
+  padding: 50px 0 10px !important;
+
+  & > p {
+    margin: 0 20px 5px;
+  }
+
+  & > h2 {
+    margin-bottom: 45px;
+  }
+}
+
+.button-container {
+  margin: 30px 50px;
+  position: relative;
+  padding: 15px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: large;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    right: 10px;
+    bottom: 10px;
+    background-color: white;
+    clip-path: polygon(0 100%, 100% 0, 100% 100%);
+  }
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.bullet-container {
+
+  & > * {
+    margin-left: 35px;
+  }
+
+  li {
+    margin: 10px 0 10px -10px;
+  }
+
+  .sub-bullet {
+    position: relative;
+    $dot_size: 18px;
+    padding-left: $dot_size;
+    font-weight: bold;
+    margin-bottom: 5px;
+
+    &::before {
+      content: '―';
+      display: block;
+      position: absolute;
+      font-size: $dot_size;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+    }
+
+    & ~ .sub-bullet-content {
+      padding-left: $dot_size;
+    }
+  }
+
+  .sub-bullet-content + .sub-bullet {
+    margin-top: 20px;
+  }
+
+  p {
+    margin-bottom: 3px;
+  }
+
+  & > h5 {
+    position: relative;
+    $dot_size: 20px;
+    padding-left: $dot_size;
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: 15px;
+    margin-left: 25px;
+
+    &::before {
+      content: '◆';
+      display: block;
+      position: absolute;
+      font-size: $dot_size;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+    }
+
+    &:not(:first-of-type) {
+      margin-top: 45px;
+    }
+  }
+
+  & > h6 {
+    padding: 20px 0 3px;
+    font-size: 17px;
+  }
+
+}
