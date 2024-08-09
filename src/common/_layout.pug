@@ -1,12 +1,10 @@
 doctype html
 html(lang="ja")
   head
-    block title
     block head
+      include _head
   body
-    block header
+    include _header
     block content
-    block footer
-      .footer
-        p Copyright (C) 白陵中学校・高等学校 All Rights Reserved.
+    include _footer
     script(src="./assets/vendor/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous")

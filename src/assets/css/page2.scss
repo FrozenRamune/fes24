@@ -1,0 +1,30 @@
+@use "common";
+
+.program-container {
+  background-color: white;
+  margin: 10px 20px;
+  padding: 5px 10px;
+
+  p {
+    margin: 3px;
+    font-size: 18px;
+  }
+
+  .title {
+    position: relative;
+    $icon_size: 21px;
+    padding-left: $icon_size;
+
+    &::before {
+      content: '♪';
+      display: block;
+      position: absolute;
+      width: $icon_size;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      font-size: $icon_size;
+    }
+  }
+
+}

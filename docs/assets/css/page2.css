@@ -162,54 +162,26 @@ body > div > h2 {
   font-size: 17px;
 }
 
-.top-img {
-  width: 100%;
+.program-container {
+  background-color: white;
+  margin: 10px 20px;
+  padding: 5px 10px;
 }
-
-.img {
-  width: calc(100% - 40px);
-  margin: 0 20px;
+.program-container p {
+  margin: 3px;
+  font-size: 18px;
 }
-
-.price-container {
-  display: flex;
-  justify-content: space-between;
-  width: 220px;
-}
-
-#food .price-container {
+.program-container .title {
   position: relative;
-  padding-left: 15px;
+  padding-left: 21px;
 }
-#food .price-container::before {
-  content: "・";
+.program-container .title::before {
+  content: "♪";
   display: block;
   position: absolute;
-  width: 15px;
+  width: 21px;
   top: 50%;
   transform: translateY(-50%);
   left: 0;
-  font-size: 25px;
-}
-#food .shop-container {
-  margin-bottom: 30px;
-}
-#food .nested-price-container {
-  display: flex;
-  justify-content: space-between;
-  width: 220px;
-  margin-left: 10px;
-}
-
-#goods ul {
-  list-style-type: decimal;
-}
-#goods li {
-  margin: 25px 30px;
-}
-#goods .option-container {
-  margin-top: 5px;
-}
-#goods .option-container div:first-of-type {
-  font-size: 17px;
+  font-size: 21px;
 }

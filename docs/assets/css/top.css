@@ -74,9 +74,9 @@ body > div > h2 {
 }
 
 .button-container {
-  margin: 30px 50px;
+  margin: 30px 50px !important;
   position: relative;
-  padding: 15px;
+  padding: 15px !important;
   color: white;
   text-align: center;
   font-weight: bold;
@@ -104,6 +104,9 @@ body > div > h2 {
   text-decoration: none;
 }
 
+.bullet-container {
+  margin-bottom: 20px;
+}
 .bullet-container > * {
   margin-left: 35px;
 }
@@ -252,4 +255,9 @@ body > div > h2 {
 #information .information-content .information-date {
   margin-right: 20px;
   justify-content: space-between;
+}
+
+#access .embbed-map-container {
+  margin: 10px 35px;
+  height: 300px;
 }

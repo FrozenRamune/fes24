@@ -1,76 +1,12 @@
 extends common/_layout
 
-include common/_head
-include common/_header
-
-block title
-  title 文化祭
 block append head
+  title 文化祭
   link(href="./assets/css/top.css" rel="stylesheet")
   script(src="./assets/js/remain-days.js")
 
 block content
-  -
-    const informations = [
-              {
-                "date": "7.15",
-                "content": "（ここにお知らせを入れる）",
-              },
-              {
-                "date": "7.1",
-                "content": "（ここにお知らせを入れる）",
-              },
-              {
-                "date": "6.30",
-                "content": "（ここにお知らせを入れる）",
-              },
-            ]
-  -
-    const links = [
-      {
-        id: 'access',
-        page: '',
-        body: 'アクセス',
-        color: 'red',
-      },
-      {
-        id: 'map',
-        page: 'page1.html',
-        body: '校内マップ',
-        color: 'blue',
-      },
-      {
-        id: 'goods',
-        page: 'page1.html',
-        body: '物販情報',
-        color: 'mint',
-      },
-      {
-        id: 'stage',
-        page: 'page2.html',
-        body: 'ステージ情報',
-        color: 'green',
-      },
-      {
-        id: 'food',
-        page: 'page1.html',
-        body: '飲食物情報',
-        color: 'yellow',
-      },
-      {
-        id: 'event',
-        page: 'page2.html',
-        body: 'イベント情報',
-        color: 'sky',
-      },
-      {
-        id: 'clubs',
-        page: 'page3.html',
-        head: 'club activities',
-        body: '各部活紹介',
-        color: 'purple',
-      }
-    ]
+  include _index_data
   img.top-img(class=["img-fluid"] src="./assets/img/top_logo.png")
   div(class=["container-red", "container-fluid", "d-flex", "align-items-center", "justify-content-center", "m-0", "p-0"])
     div 開幕まであと
@@ -116,5 +52,20 @@ block content
     p 兵庫県高砂市阿弥陀町阿弥陀２２６０
     p 白陵中学校・高等学校
     p （JR曽根駅から徒歩で20～25分）
+    .embbed-map-container
+      iframe(
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3276.141348091985!2d134.76695047620188!3d34.80238557774931!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3554df512eaac6eb%3A0x13a8de174842b68e!2z55m96Zm15Lit5a2m5qCh44O76auY562J5a2m5qCh!5e0!3m2!1sja!2sjp!4v1723207355023!5m2!1sja!2sjp"
+        style="border:0;"
+        width="100%"
+        height="100%"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      )
     .button-container(class=["back-red"])
-      a(href="#" class=["stretched-link"]) Googleマップで見る
+      a(
+        href="https://maps.app.goo.gl/bXku8eZY6t4SqD59A"
+        class=["stretched-link"]
+        target="_brank"
+        rel=["noopener", "noreferrer"]
+      ) Googleマップで見る

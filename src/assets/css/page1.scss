@@ -32,6 +32,17 @@
       font-size: 25px;
     }
   }
+
+  .shop-container {
+    margin-bottom: 30px;
+  }
+
+  .nested-price-container {
+    display: flex;
+    justify-content: space-between;
+    width: 220px;
+    margin-left: 10px;
+  }
 }
 
 #goods {

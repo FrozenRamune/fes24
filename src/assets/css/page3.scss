@@ -1,0 +1,15 @@
+@use "common";
+
+#clubs {
+  .club-content {
+    margin: 0 40px;
+    line-height: 35px;
+  }
+
+  .bullet-container {
+    & > h5 {
+      margin-bottom: 5px;
+    }
+  }
+}
+

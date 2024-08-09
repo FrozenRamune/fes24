@@ -162,54 +162,10 @@ body > div > h2 {
   font-size: 17px;
 }
 
-.top-img {
-  width: 100%;
+#clubs .club-content {
+  margin: 0 40px;
+  line-height: 35px;
 }
-
-.img {
-  width: calc(100% - 40px);
-  margin: 0 20px;
-}
-
-.price-container {
-  display: flex;
-  justify-content: space-between;
-  width: 220px;
-}
-
-#food .price-container {
-  position: relative;
-  padding-left: 15px;
-}
-#food .price-container::before {
-  content: "・";
-  display: block;
-  position: absolute;
-  width: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 0;
-  font-size: 25px;
-}
-#food .shop-container {
-  margin-bottom: 30px;
-}
-#food .nested-price-container {
-  display: flex;
-  justify-content: space-between;
-  width: 220px;
-  margin-left: 10px;
-}
-
-#goods ul {
-  list-style-type: decimal;
-}
-#goods li {
-  margin: 25px 30px;
-}
-#goods .option-container {
-  margin-top: 5px;
-}
-#goods .option-container div:first-of-type {
-  font-size: 17px;
+#clubs .bullet-container > h5 {
+  margin-bottom: 5px;
 }

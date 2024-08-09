@@ -1,0 +1,28 @@
+extends common/_layout
+
+block append head
+  title 文化祭
+  link(href="./assets/css/page2.css" rel="stylesheet")
+
+block content
+  include _page2_data
+  img.top-img(class=["img-fluid"] src="./assets/img/top_back.png")
+  #stage(class="container-green")
+    h1(class=["text-center", "display-4", "fw-bold"]) STAGE
+    h2(class=["text-center"]) ステージ情報
+    each program in stage
+      .program-container
+        p.time-id(class=["fw-bold"])
+          | #{program.time}（#{program.duration_minute}分）
+        p.title #{program.title}
+  #event(class="container-sky")
+    h1(class=["text-center", "display-4", "fw-bold"]) EVENT
+    h2(class=["text-center"]) イベント情報
+    .bullet-container
+      h5 スタンプラリー
+      p （スタンプラリーの説明）
+      h5 謎解き
+      p （謎解きの説明）
+  .button-container(class=["back-sky"])
+    a(href="./" class=["stretched-link"]) トップページへ
+
