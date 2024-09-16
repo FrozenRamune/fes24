@@ -55,6 +55,14 @@
   background-color: #EFDEFD;
 }
 
+@font-face {
+  font-family: "manifesto";
+  src: url("../font/MANIFESTO.ttfa");
+}
+nav div:has(~ p) {
+  font-family: manifesto;
+}
+
 .footer {
   margin: 0 !important;
   padding: 10px !important;
@@ -109,6 +117,7 @@ body > div > h2 {
 }
 .bullet-container > * {
   margin-left: 35px;
+  margin-right: 20px;
 }
 .bullet-container li {
   margin: 10px 0 10px -10px;
@@ -136,6 +145,9 @@ body > div > h2 {
 }
 .bullet-container p {
   margin-bottom: 3px;
+}
+.bullet-container .spacer {
+  height: 25px;
 }
 .bullet-container > h5 {
   position: relative;

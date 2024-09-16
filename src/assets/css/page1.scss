@@ -42,6 +42,11 @@
     justify-content: space-between;
     width: 220px;
     margin-left: 10px;
+
+    &:not(:has(span+span)) {
+      justify-content: center;
+    }
+
   }
 }
 

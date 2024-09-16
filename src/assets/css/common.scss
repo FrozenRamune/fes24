@@ -30,6 +30,15 @@ $secondary_colors: (
   }
 }
 
+@font-face {
+  font-family: "manifesto";
+  src: url("../font/MANIFESTO.ttfa");
+}
+
+nav div:has(~p) {
+  font-family: manifesto;
+}
+
 .footer {
   margin: 0 !important;
   padding: 10px !important;
@@ -91,6 +100,7 @@ body > div {
 
   & > * {
     margin-left: 35px;
+    margin-right: 20px;
   }
 
   li {
@@ -125,6 +135,10 @@ body > div {
 
   p {
     margin-bottom: 3px;
+  }
+
+  .spacer {
+    height: 25px;
   }
 
   & > h5 {

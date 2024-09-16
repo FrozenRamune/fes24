@@ -69,7 +69,7 @@ block content
       h5 キッチンカー
       p.sub-bullet 場所
       p.sub-bullet-content
-        | 前庭、三角公園（変更の可能性あり）
+        | 第一・第二後者前
         br
         | ※レイアウト参照
       p.sub-bullet メニュー
@@ -79,7 +79,8 @@ block content
           each item in shop.items
             li.nested-price-container
               span #{item.name}
-              span #{item.price}
+              if(item.price)
+                span #{item.price}
       //-
         each item in items.car
           li.price-container.wide-price-container
@@ -99,9 +100,5 @@ block content
           .price-container
             span #{item.name}
             span 1#{item.unit}#{item.price}円
-          each option in item.options
-            .option-container
-              div(class=["fw-bold"]) #{option.id}:
-              div #{option.value}
   .button-container(class=["back-mint"])
     a(href="./" class=["stretched-link"]) トップページへ

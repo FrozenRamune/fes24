@@ -10,11 +10,29 @@ block content
   #stage(class="container-green")
     h1(class=["text-center", "display-4", "fw-bold"]) STAGE
     h2(class=["text-center"]) ステージ情報
-    each program in stage
-      .program-container
-        p.time-id(class=["fw-bold"])
-          | #{program.time}（#{program.duration_minute}分）
-        p.title #{program.title}
+    .bullet-container
+      h5 記念棟ステージ
+      each program in kinento
+        .program-container
+          p.time-id(class=["fw-bold"])
+            | #{program.time}（#{program.duration_minute}分）
+          p.title #{program.title}
+      p ※オープニング・エンディングは生徒のみ参加可能です。
+      h5 白陵会館ホール
+      p
+        |白陵57期卒業生の岡坂郁杜様に「学生生活での取り組みから得られた成長」という題で講演していただきます。
+        |岡坂郁杜先輩は在学中数々のプログラミング大会で好成績を収め、大阪大学情報科学科に進学されました。
+      .spacer
+      p
+        |探究活動の発表、学年ごとに行われるEnglish Contest （英語による発表会）の発表をします。
+      .spacer
+      p
+        |昼休憩の時間に、オープニングで流す放送部作成のOP動画を放映します。誰でも視聴可能ですのでぜひ立ち寄ってください！
+      each program in kaikan
+        .program-container
+          p.time-id(class=["fw-bold"])
+            | #{program.time}（#{program.duration_minute}分）
+          p.title #{program.title}
   #event(class="container-sky")
     h1(class=["text-center", "display-4", "fw-bold"]) EVENT
     h2(class=["text-center"]) イベント情報
