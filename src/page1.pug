@@ -11,6 +11,7 @@ block content
     h1(class=["text-center", "display-4", "fw-bold"]) MAP
     h2(class=["text-center"]) 校内マップ
     img.img(src="./assets/img/map.png")
+    img.img(src="./assets/img/map2.png")
     .button-container(class=["back-blue"])
       a(
         href="https://www.hakuryo.ed.jp/docs/bunkasai59.pdf"
@@ -69,7 +70,7 @@ block content
       h5 キッチンカー
       p.sub-bullet 場所
       p.sub-bullet-content
-        | 第一・第二後者前
+        | 第一・第二校舎前
         br
         | ※レイアウト参照
       p.sub-bullet メニュー
@@ -99,6 +100,6 @@ block content
         li
           .price-container
             span #{item.name}
-            span 1#{item.unit}#{item.price}円
+            span #{item.price}円
   .button-container(class=["back-mint"])
     a(href="./" class=["stretched-link"]) トップページへ
