@@ -38,13 +38,6 @@ block content
             |#{links[ind].head || links[ind].id.toUpperCase()}
         img(src=`./assets/img/icon_${links[ind].id}.png`)
         p #{links[ind].body}
-  #information
-    h1(class=["text-center", "display-4", "fw-bold"]) INFORMATION
-    h2(class=["text-center"]) お知らせ
-    each info in informations
-      p.information-content
-        span.information-date 7.15
-        |ここにお知らせを入れる
   #access(class="container-red")
     h1(class=["text-center", "display-4", "fw-bold"]) ACCESS
     h2(class=["text-center"]) アクセス
