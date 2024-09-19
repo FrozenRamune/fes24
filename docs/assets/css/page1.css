@@ -189,6 +189,10 @@ body > div > h2 {
   width: 220px;
 }
 
+.logo {
+  filter: brightness(0) saturate(100%) invert(85%) sepia(22%) saturate(7459%) hue-rotate(195deg) brightness(105%) contrast(124%);
+}
+
 #food .price-container {
   position: relative;
   padding-left: 15px;

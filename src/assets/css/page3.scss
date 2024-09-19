@@ -1,5 +1,9 @@
 @use "common";
 
+.logo {
+  filter: brightness(0) saturate(100%) invert(76%) sepia(22%) saturate(176%) hue-rotate(229deg) brightness(109%) contrast(107%);
+}
+
 #clubs {
   .club-content {
     margin: 0 40px;

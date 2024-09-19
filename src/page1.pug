@@ -6,7 +6,7 @@ block append head
 
 block content
   include _page1_data
-  img.top-img(class=["img-fluid"] src="./assets/img/top_back.png")
+  img.top-img(class=["img-fluid", "logo"] src="./assets/img/top_back.png")
   #map(class="container-blue")
     h1(class=["text-center", "display-4", "fw-bold"]) MAP
     h2(class=["text-center"]) 校内マップ
@@ -39,7 +39,9 @@ block content
           | 13:00～13:30からキャンセル分の再販開始。
       h5 ドリンク販売
       p.sub-bullet 場所
-      p.sub-bullet-content 技芸棟前※レイアウト参照
+      p.sub-bullet-content 技芸棟前※
+        a(href="page1.html#map") マップ
+        | 参照
       p.sub-bullet-content ただし大雨の場合　技芸棟1階に変更
       p.sub-bullet メニュー
       ul.sub-bullet-content
@@ -51,7 +53,9 @@ block content
       p 食堂とテイクアウトの2つに分かれる。
       h6 1.食堂
       p.sub-bullet 場所
-      p.sub-bullet-content 樹家食堂※レイアウト参照
+      p.sub-bullet-content 樹家食堂※
+        a(href="page1.html#map") マップ
+        | 参照
       p.sub-bullet メニュー
       ul.sub-bullet-content
         each item in items.cafeteria
@@ -60,7 +64,9 @@ block content
             span #{item.price}
       h6 2.テイクアウト
       p.sub-bullet 場所
-      p.sub-bullet-content 校舎西側※レイアウト参照
+      p.sub-bullet-content 校舎西側※
+        a(href="page1.html#map") マップ
+        | 参照
       p.sub-bullet メニュー
       ul.sub-bullet-content
         each item in items.take_out
@@ -72,7 +78,9 @@ block content
       p.sub-bullet-content
         | 第一・第二校舎前
         br
-        | ※レイアウト参照
+        | ※
+        a(href="page1.html#map") マップ
+        | 参照
       p.sub-bullet メニュー
       each shop in items.car
         p.sub-bullet-content(class=["fw-bold", "h6"]) #{shop.shop_name}

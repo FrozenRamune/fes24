@@ -1,5 +1,9 @@
 @use "common";
 
+.logo {
+  filter: brightness(0) saturate(100%) invert(99%) sepia(19%) saturate(856%) hue-rotate(39deg) brightness(97%) contrast(91%);
+}
+
 .program-container {
   background-color: white;
   margin: 10px 20px;
