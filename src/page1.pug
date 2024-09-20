@@ -11,7 +11,6 @@ block content
     h1(class=["text-center", "display-4", "fw-bold"]) MAP
     h2(class=["text-center"]) 校内マップ
     img.img(src="./assets/img/map.png")
-    img.img(src="./assets/img/map2.png")
     .button-container(class=["back-blue"])
       a(
         href="map.pdf"
@@ -90,19 +89,10 @@ block content
               span #{item.name}
               if(item.price)
                 span #{item.price}
-      //-
-        each item in items.car
-          li.price-container.wide-price-container
-            span #{item.name}
-            span #{typeof item.price == 'string' ? item.price : item.price[0]}
-          if typeof item.price != 'string'
-            - for(const p of item.price.slice(1))
-              li.price-container.wide-price-container.price-variation
-                span #{p}
   #goods(class="container-mint")
     h1(class=["text-center", "display-4", "fw-bold"]) GOODS
     h2(class=["text-center"]) 物販情報
-    img.img(src="./assets/img/goods.png")
+    img.img.goods-img(src="./assets/img/goods.png")
     ul
       each item in items.goods
         li
