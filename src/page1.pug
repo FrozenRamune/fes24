@@ -9,7 +9,7 @@ block content
   img.top-img(class=["img-fluid", "logo"] src="./assets/img/top_back.png")
   #map(class="container-blue")
     h1(class=["text-center", "display-4", "fw-bold"]) MAP
-    h2(class=["text-center"]) 校内マップ
+    h2(class=["text-center"]) 展示マップ
     img.img(src="./assets/img/map.png")
     .button-container(class=["back-blue"])
       a(
@@ -17,7 +17,7 @@ block content
         class=["stretched-link"]
         target="_brank"
         rel="noopener noreferrer"
-      ) PDFで見る
+      ) 校内案内図を見る
   #food(class="container-yellow")
     h1(class=["text-center", "display-4", "fw-bold"]) FOOD
     h2(class=["text-center"]) 飲食物情報
@@ -39,7 +39,8 @@ block content
       h5 ドリンク販売
       p.sub-bullet 場所
       p.sub-bullet-content 技芸棟前※
-        a(href="page1.html#map") マップ
+        a(href="page1.html#map") 校内案内図
+
         | 参照
       p.sub-bullet-content ただし大雨の場合　技芸棟1階に変更
       p.sub-bullet メニュー
@@ -53,7 +54,7 @@ block content
       h6 1.食堂
       p.sub-bullet 場所
       p.sub-bullet-content 樹家食堂※
-        a(href="page1.html#map") マップ
+        a(href="page1.html#map") 校内案内図
         | 参照
       p.sub-bullet メニュー
       ul.sub-bullet-content
@@ -64,7 +65,7 @@ block content
       h6 2.テイクアウト
       p.sub-bullet 場所
       p.sub-bullet-content 校舎西側※
-        a(href="page1.html#map") マップ
+        a(href="page1.html#map") 校内案内図
         | 参照
       p.sub-bullet メニュー
       ul.sub-bullet-content
@@ -78,7 +79,7 @@ block content
         | 第一・第二校舎前
         br
         | ※
-        a(href="page1.html#map") マップ
+        a(href="page1.html#map") 校内案内図
         | 参照
       p.sub-bullet メニュー
       each shop in items.car
